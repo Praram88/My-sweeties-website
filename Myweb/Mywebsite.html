@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praram Website</title>
+
+  <link rel="stylesheet" href="style.css"> <!-- ลิงก์ไฟล์ CSS -->
+
+</head>
+<body style="background-color: white;">
+  <!-- Nav bar -->
+  <header>
+    <div class="container">
+      <nav id="home"> <!-- ใช้แท็ก <nav> แทน <taskbar> -->
+        <h1>My Bambam&#128149; </h1>
+        <div class="menu">
+          <a href="Question.html">Question</a>
+          <a href="Special.html">Special </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home">
+      <img src="Bambie_Xmas.JPG" width="350" height="450" alt="Bambie1" class="center-image">
+    </section>
+    <!-- Snow effect -->
+    <div id="snow-container"></div> <!-- สร้าง div สำหรับแสดงหิมะ -->
+  </main>
+
+  <script>
+    const snowContainer = document.getElementById("snow-container");
+
+    // สร้างหิมะ
+    function createSnowflake() {
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("snowflake");
+      snowflake.textContent = "❄";
+      snowflake.style.left = Math.random() * window.innerWidth + "px";
+      snowflake.style.fontSize = Math.random() * 10 + 10 + "px"; // ขนาดสุ่ม
+      snowflake.style.animationDuration = Math.random() * 5 + 5 + "s"; // ระยะเวลาในการตก
+      snowContainer.appendChild(snowflake);
+
+      // ลบหิมะเมื่อมันตกถึงพื้น
+      setTimeout(() => {
+        snowflake.remove();
+      }, 10000);
+    }
+
+    // สร้างหิมะตกทุกๆ 100ms
+    setInterval(createSnowflake, 100);
+  </script>
+      <!-- Message Box -->
+      <div class="message-box">
+        <p>สุขสันต์วันเกิดนะครับอ้วนของเค้า&#x1F382;&#x1F389;&#x1F389; ขอให้อ้วนเป็นผู้หญิงที่มีความสุขมากที่สุดนะครับ ขอให้อ้วนได้งานเร็วๆและสังคมการทำงานมีแต่คนยกยอสรรเสริญอ้วน จนทำให้อ้วนมีความมั่นคงในชีวิตและสามารถดูแลแม่กวินใบเฟิร์นได้ อ้วนเค้าเก่งที่สุดครับ รักอ้วนมากๆนะครับ&#x2665;&#xfe0f;</p>
+      </div>
+  
+      <div class="message-box2">
+        <p>❗❗❗อ้วนสามารถเยี่ยมชมเว็ปไซต์เค้าได้เพื่อดูสิ่งที่เค้าทำไว้ให้อ้วนในแต่ละอันได้นะครับ</p>
+      </div>
+</body>
+</html>
